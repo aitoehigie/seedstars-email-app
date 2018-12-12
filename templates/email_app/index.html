@@ -1,13 +1,15 @@
 {% extends "email_app/base.html" %}
-{% load crispy_forms_tags %}
-
 
 {% block content %}
+
 <div class="container">
-<form method="post">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+<div class="row">
+<h1>Welcome to the Seedstars Email App</h1>
+</div>
+<div class="row">
+<a href="{% url 'add' %}"><button type="button" class="btn btn-info">Make an email entry</button></a>
+<a href="{% url 'list' %}"><button type="button" class="btn btn-secondary">List email entries</button></a>
+</div>
+</div>
 </div>
 {% endblock %}
